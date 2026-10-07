@@ -1,4 +1,4 @@
-param([string]$Destination = (Join-Path ([Environment]::GetFolderPath('Desktop')) 'Acer Fan Control - Instalador'))
+﻿param([string]$Destination = (Join-Path ([Environment]::GetFolderPath('Desktop')) 'Acer Fan Control - Instalador'))
 $ErrorActionPreference = 'Stop'
 $compiler = Join-Path $env:WINDIR 'Microsoft.NET\Framework64\v4.0.30319\csc.exe'
 $build = Join-Path $PSScriptRoot 'build'

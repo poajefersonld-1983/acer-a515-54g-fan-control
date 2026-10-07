@@ -1,4 +1,4 @@
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
 $expected = Join-Path ([Environment]::GetFolderPath('ProgramFiles')) 'AcerFanControl'
 $resolved = (Resolve-Path -LiteralPath $PSScriptRoot).ProviderPath
 if ($resolved -ne $expected) { throw 'Execute na pasta instalada.' }

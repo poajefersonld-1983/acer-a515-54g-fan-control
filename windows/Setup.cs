@@ -191,7 +191,7 @@ sealed class Setup : Form
         CreateShortcut(Environment.GetFolderPath(Environment.SpecialFolder.Programs), exe);
         if (desktop.Checked) CreateShortcut(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), exe);
         string powershell = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), @"WindowsPowerShell\v1.0\powershell.exe");
-        var installScript = new ProcessStartInfo(powershell, "-NoProfile -ExecutionPolicy Bypass -File \"" + Path.Combine(InstallDirectory, "install-service.ps1") + "\" -Startup:" + (startup.Checked ? "$true" : "$false"));
+        var installScript = new ProcessStartInfo(powershell, "-NoProfile -ExecutionPolicy Bypass -File \"" + Path.Combine(InstallDirectory, "install-service.ps1") + "\"" + (startup.Checked ? "" : " -NoStartup"));
         installScript.UseShellExecute = false; installScript.CreateNoWindow = true;
         using (var install = Process.Start(installScript))
         { if (!install.WaitForExit(30000) || install.ExitCode != 0) throw new InvalidOperationException("Não foi possível configurar o serviço. A instalação não foi concluída."); }

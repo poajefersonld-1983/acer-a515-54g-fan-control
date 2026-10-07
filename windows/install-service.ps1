@@ -1,4 +1,4 @@
-param([bool]$Startup = $true)
+﻿param([switch]$NoStartup)
 $ErrorActionPreference = 'Stop'
 $expected = Join-Path ([Environment]::GetFolderPath('ProgramFiles')) 'AcerFanControl'
 if ([IO.Path]::GetFullPath($PSScriptRoot) -ne $expected) { throw 'Execute na pasta instalada.' }
@@ -16,7 +16,7 @@ if ($existing) {
 }
 & sc.exe failure AcerFanControl reset= 86400 actions= restart/10000/restart/30000/restart/60000
 if ($LASTEXITCODE -ne 0) { throw 'Falha ao configurar recuperação.' }
-if ($Startup) {
+if (-not $NoStartup) {
     $action = New-ScheduledTaskAction -Execute $exe -Argument '--minimized'
     $user = [Security.Principal.WindowsIdentity]::GetCurrent().Name
     $trigger = New-ScheduledTaskTrigger -AtLogOn -User $user

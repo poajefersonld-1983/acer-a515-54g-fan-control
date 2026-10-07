@@ -145,7 +145,7 @@ namespace AcerFanControl
             var percentage = new Label { Text = "%", Location = new Point(112, 185), AutoSize = true };
             Button[] buttons = { automatic, manual, maximum, save };
             string[] labels = { "Automático", "Aplicar ajuste", "Máximo", "Salvar perfil" };
-            for (int i = 0; i < buttons.Length; i++) { buttons[i].SetBounds(26 + i * 145, 232, 135, 38); buttons[i].Text = labels[i]; buttons[i].FlatStyle = FlatStyle.Flat; }
+            for (int i = 0; i < buttons.Length; i++) { buttons[i].SetBounds(26 + i * 145, 232, 135, 38); buttons[i].Text = labels[i]; buttons[i].FlatStyle = FlatStyle.Flat; buttons[i].Enabled = false; }
             status.SetBounds(26, 287, 577, 57); status.Text = "Prévia: aguardando serviço. Controle depende do módulo assinado e da validação no Acer.";
             Controls.AddRange(new Control[] { title, subtitle, sensors, percent, percentage, automatic, manual, maximum, save, status });
             automatic.Click += delegate { Query("auto"); };
