@@ -1,0 +1,19 @@
+ACER FAN CONTROL — PRÉVIA WINDOWS 11 X64
+
+Abra Instalar.exe > Avançar > Instalar > Concluir.
+Autorize a solicitação de administrador do Windows.
+
+ESTA PRÉVIA AINDA NÃO ESTÁ PRONTA PARA CONTROLAR AS VENTOINHAS.
+O módulo AcerPmc3 assinado está pendente, assim como a validação física
+no Acer. O aplicativo informa a pendência e mantém os botões indisponíveis.
+
+Hardware alvo: Aspire A515-54G, placa Doc_WC, BIOS V1.24.
+Não é uma versão para todos os notebooks Acer.
+
+Inclui interface nativa, serviço e instalador. Não exige Python.
+As opções permitem atalho no Desktop e interface minimizada no login.
+O serviço inicia com o Windows. A interface funciona como administrador.
+
+Não inclui drivers, credenciais, logs nem configurações do autor.
+Leia README.md para o estado real da adaptação e as etapas pendentes.
+

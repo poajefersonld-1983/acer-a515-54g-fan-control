@@ -1,5 +1,16 @@
 # Acer A515-54G Fan Control
 
+## Prévia para Windows 11
+
+A [adaptação Windows](windows/README.md) inclui interface, serviço e instalador guiado. **Ainda não controla as ventoinhas em uma instalação comum: o módulo AcerPmc3 assinado e a validação no notebook estão pendentes.** Os testes offline não comprovam suporte ao hardware no Windows.
+
+[Baixar instalador da prévia Windows x64](windows/downloads/Acer-Fan-Control-Windows11-x64-Preview.zip?raw=true). Extraia e abra `Instalar.exe` → Avançar → Instalar → Concluir. Leia o estado e os requisitos antes de distribuir.
+
+![Prévia Windows](windows/images/app.png)
+
+## Versão Linux validada
+
+
 Controle de ventoinha para Linux, com interface GTK 4 em português, RPM, temperatura da CPU e temperatura da GPU NVIDIA quando disponível. Inclui os modos **Automático**, **Personalizado (72–100%)**, **Máximo** e **Salvar e manter funcionando**. Um serviço systemd mantém o perfil salvo após fechar a janela e o recupera na próxima inicialização.
 
 **Compatibilidade validada:** Acer Aspire **A515-54G**, placa **Doc_WC**, BIOS **V1.24**, controlador ITE **IT8987**, Fedora 44. O código recusa outras identificações ou configurações do controlador. A presença de uma MX250, sozinha, não garante compatibilidade: o controle depende da placa e do firmware do notebook.
